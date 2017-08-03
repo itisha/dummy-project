@@ -1,13 +1,12 @@
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tisha</groupId>
-    <artifactId>spring-hibernate-udemy</artifactId>
+    <artifactId>dummy-project</artifactId>
     <packaging>pom</packaging>
-    <version>1.1-SNAPSHOT</version>
-    <name>spring-hibernate-udemy</name>
+    <version>2.0.3-SNAPSHOT</version>
+    <name>Dummy Project</name>
 
     <modules>
         <module>webapp-module</module>
@@ -32,7 +31,8 @@
         <mysql-connector-java.version>5.1.37</mysql-connector-java.version>
         <junit.version>3.8.1</junit.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
-        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <maven-release-plugin.version>2.5.2</maven-release-plugin.version>
+        <maven-scm-plugin.version>1.9.5</maven-scm-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -127,6 +127,18 @@
                 <version>1.1-SNAPSHOT</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven-release-plugin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>${maven-scm-plugin.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -136,7 +148,18 @@
             <id>nexus-snapshots</id>
             <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://localhost:8081/nexus/content/repositories/releases</url>
+        </repository>
     </distributionManagement>
+
+    <scm>
+        <connection>scm:git:https;//github.com/itisha/dummy-project.git</connection>
+        <developerConnection>scm:git:git@github.com:itisha/dummy-project.git</developerConnection>
+        <url>https://github.com:itisha/dummy-project.git</url>
+      <tag>HEAD</tag>
+  </scm>
 
     <build>
         <finalName>webapp</finalName>
@@ -167,6 +190,13 @@
                         <tagNameFormat>v@{project.version}</tagNameFormat>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-scm-plugin</artifactId>
+                            <version>${maven-scm-plugin.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>

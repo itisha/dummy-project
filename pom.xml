@@ -128,18 +128,6 @@
                 <version>1.1-SNAPSHOT</version>
             </dependency>
 
-            <!--<dependency>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>${maven-release-plugin.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-scm-plugin</artifactId>
-                <version>${maven-scm-plugin.version}</version>
-            </dependency>-->
-
         </dependencies>
     </dependencyManagement>
 
@@ -190,13 +178,6 @@
                         <tagNameFormat>v@{project.version}</tagNameFormat>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                     </configuration>
-                    <!--<dependencies>
-                        <dependency>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-scm-plugin</artifactId>
-                            <version>${maven-scm-plugin.version}</version>
-                        </dependency>
-                    </dependencies>-->
                 </plugin>
             </plugins>
         </pluginManagement>

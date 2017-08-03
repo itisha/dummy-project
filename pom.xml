@@ -136,7 +136,17 @@
             <id>nexus-snapshots</id>
             <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://localhost:8081/nexus/content/repositories/releases</url>
+        </repository>
     </distributionManagement>
+
+    <scm>
+        <connection>scm:git:https://github.com/itisha/dummy-project.git</connection>
+        <developerConnection>scm:git:git@github.com:itisha/dummy-project.git</developerConnection>
+        <url>https://github.com/itisha/dummy-project</url>
+    </scm>
 
     <build>
         <finalName>webapp</finalName>

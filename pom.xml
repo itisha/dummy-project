@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tisha</groupId>
-    <artifactId>spring-hibernate-udemy</artifactId>
+    <artifactId>dummy-project</artifactId>
     <packaging>pom</packaging>
     <version>1.1-SNAPSHOT</version>
     <name>spring-hibernate-udemy</name>

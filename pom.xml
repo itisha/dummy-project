@@ -143,9 +143,9 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:git@github.com:itisha/dummy-project.git</connection>
+        <connection>scm:git:https;//github.com/itisha/dummy-project.git</connection>
         <developerConnection>scm:git:git@github.com:itisha/dummy-project.git</developerConnection>
-        <url>scm:git:git@github.com:itisha/dummy-project.git</url>
+        <url>https://github.com:itisha/dummy-project.git</url>
     </scm>
 
     <build>

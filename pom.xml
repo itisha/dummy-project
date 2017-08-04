@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -33,6 +34,10 @@
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <maven-release-plugin.version>2.5.2</maven-release-plugin.version>
         <maven-scm-plugin.version>1.9.5</maven-scm-plugin.version>
+        <wagon-webdav-jackrabbit.version>2.12</wagon-webdav-jackrabbit.version>
+        <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
+        <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -139,6 +144,36 @@
                 <version>${maven-scm-plugin.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.6</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>${wagon-webdav-jackrabbit.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${maven-project-info-reports-plugin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>${findbugs-maven-plugin.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -152,14 +187,18 @@
             <id>nexus-releases</id>
             <url>http://localhost:8081/nexus/content/repositories/releases</url>
         </repository>
+        <site>
+            <id>udemy-site</id>
+            <url>dav:http://localhost:8081/nexus/content/sites/udemy-site</url>
+        </site>
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:https;//github.com/itisha/dummy-project.git</connection>
+        <connection>scm:git:https://github.com/itisha/dummy-project.git</connection>
         <developerConnection>scm:git:git@github.com:itisha/dummy-project.git</developerConnection>
         <url>https://github.com:itisha/dummy-project.git</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <build>
         <finalName>webapp</finalName>
@@ -198,8 +237,58 @@
                         </dependency>
                     </dependencies>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.wagon</groupId>
+                            <artifactId>wagon-webdav-jackrabbit</artifactId>
+                            <version>${wagon-webdav-jackrabbit.version}</version>
+                        </dependency>
+                    </dependencies>
+
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
 
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${maven-project-info-reports-plugin.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>plugin-management</report>
+                            <report>distribution-management</report>
+                            <report>dependency-info</report>
+                            <report>scm</report>
+                            <report>mailing-list</report>
+                            <report>issue-tracking</report>
+                            <report>cim</report>
+                            <report>plugins</report>
+                            <report>project-team</report>
+                            <report>license</report>
+                            <report>dependencies</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>${findbugs-maven-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

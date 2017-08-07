@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pat:Patient xmlns:pat="http://www.tisha.org/Patient"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://www.tisha.org/Patient patient.xsd"
+             xsi:schemaLocation="http://www.tisha.org/Patient schema/patient.xsd"
              id="00123">
     <pat:name>Tisha</pat:name>
     <pat:age>34</pat:age>

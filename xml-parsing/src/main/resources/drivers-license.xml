@@ -3,10 +3,10 @@
 <!-- Some comment just in case -->
 <DriversLicense status="suspended">
 
-    <Number>122345</Number>
-    <FirstName>Barath</FirstName>
+    <number>122345</number>
+    <firstName>Barath</firstName>
     <lastName>Thipp&amp;ireddy</lastName>
-    <DateOfBirth>18/may/1981</DateOfBirth>
+    <dateOfBirth>18/may/1981</dateOfBirth>
     <vehicleType>Car</vehicleType>
     <dateOfIssue>11/june/2012</dateOfIssue>
 
@@ -18,9 +18,9 @@
          We just cannot nest CDATA blocks into each other :(
     ]]>
 
-    <ExpiryDate>11/june/2015</ExpiryDate>
-    <Photo location='servername/file'/>
-    <Photo location="servername/file"/>
+    <expiryDate>11/june/2015</expiryDate>
+    <photo location='servername/file1.jpg'/>
+    <photo location="servername/file2.jpg"/>
 
     <address>
         <street>Чапаева 4</street>

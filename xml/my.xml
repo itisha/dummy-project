@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Some comment just in case -->
+<DriversLicense status="suspended">
+
+    <Number>122345</Number>
+    <FirstName>Barath</FirstName>
+    <lastName>Thipp&amp;ireddy</lastName>
+    <DateOfBirth>18/may/1981</DateOfBirth>
+    <vehicleType>Car</vehicleType>
+    <dateOfIssue>11/june/2012</dateOfIssue>
+
+    <![CDATA[
+         We can type any text here, this will be ignored. Event ampersands &&& and examples of xml like below:
+
+         <dateOfIssue>11/june/2012</dateOfIssue>
+
+         We just cannot nest CDATA blocks into each other :(
+    ]]>
+
+    <ExpiryDate>11/june/2015</ExpiryDate>
+    <Photo location='servername/file'/>
+    <Photo location="servername/file"/>
+
+    <address>
+        <street>Чапаева 4</street>
+        <city>Мядзел</city>
+        <state>mi</state>
+        <country>Belarus</country>
+        <zipcode>222380</zipcode>
+    </address>
+
+</DriversLicense>

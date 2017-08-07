@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pat:Patient xmlns:pat="http://www.tisha.org/Patient"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.tisha.org/Patient patient.xsd">
+    <pat:name>Tisha</pat:name>
+    <pat:age>34</pat:age>
+    <pat:email>tisha@gmail.com</pat:email>
+    <pat:gender>M</pat:gender>
+    <pat:phone>1234567890</pat:phone>
+</pat:Patient>

@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pat:Patient xmlns:pat="http://www.tisha.org/Patient"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://www.tisha.org/Patient patient.xsd">
+             xsi:schemaLocation="http://www.tisha.org/Patient patient.xsd"
+             id="00123">
     <pat:name>Tisha</pat:name>
     <pat:age>34</pat:age>
     <pat:email>tisha@gmail.com</pat:email>
     <pat:gender>M</pat:gender>
+
     <pat:phone>1234567890</pat:phone>
+    <pat:phone>1234567891</pat:phone>
+    <pat:phone>1234567892</pat:phone>
+
+    <pat:paymentType>
+        <pat:cash>1222</pat:cash>
+    </pat:paymentType>
 </pat:Patient>

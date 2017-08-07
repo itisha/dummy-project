@@ -2,7 +2,13 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://www.tisha.org/Patient"
         xmlns:tns="http://www.tisha.org/Patient"
+        xmlns:common="http://www.tisha.org/Common"
         elementFormDefault="qualified">
+
+    <include schemaLocation="payment-type.xsd"/>
+
+    <import schemaLocation="common.xsd" namespace="http://www.tisha.org/Common"/>
+
 
     <element name="Patient" type="tns:Patient"/>
 
@@ -10,10 +16,12 @@
         <sequence>
             <element name="name" type="tns:String15chars"/>
             <element name="age" type="int"/>
-            <element name="email" type="string"/>
+            <element name="email" type="string" minOccurs="0"/>
             <element name="gender" type="tns:gender"/>
-            <element name="phone" type="string"/>
+            <element name="phone" type="string" maxOccurs="unbounded"/>
+            <element name="paymentType" type="tns:PaymentType"/>
         </sequence>
+        <attribute name="id" type="common:id" use="required"/>
     </complexType>
 
     <simpleType name="String15chars">

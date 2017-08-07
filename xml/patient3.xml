@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pat:Patient
+        xmlns:pat="http://www.tisha.org/Patient"
+        id="002213">
+
+    <pat:name>Igor</pat:name>
+    <pat:age>3</pat:age>
+
+    <pat:email>string</pat:email>
+    <pat:gender>M</pat:gender>
+
+    <pat:phone>123151</pat:phone>
+
+    <pat:paymentType>
+        <pat:insurance>
+            <pat:provider>BelGosStrakh</pat:provider>
+            <pat:limit>1000.00</pat:limit>
+        </pat:insurance>
+    </pat:paymentType>
+
+</pat:Patient>

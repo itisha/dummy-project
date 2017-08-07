@@ -18,7 +18,7 @@ public class DriversLicense {
 
     private String[] photo;
 
-    private Address address;
+    private Address address = new Address();
 
     public long getNumber() {
         return number;

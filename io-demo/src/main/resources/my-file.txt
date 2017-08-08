@@ -1,0 +1,3 @@
+abcde
+This is a text content of the file.
+And some more on the next line.

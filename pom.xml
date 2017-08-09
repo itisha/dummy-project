@@ -15,6 +15,7 @@
         <module>core</module>
         <module>xml-parsing</module>
         <module>io-demo</module>
+        <module>webapp-jsp-servlet</module>
     </modules>
 
     <properties>

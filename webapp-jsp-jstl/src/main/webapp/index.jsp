@@ -1,3 +1,4 @@
+<%@ page import="java.io.File" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -14,6 +15,25 @@
     <br/>
     The myVar is ${myVar}
 </p>
+
+<%
+    File directory = new File(request.getRealPath("."));
+    File[] files = directory.listFiles();
+    String[] fileNames = new String[files.length];
+    for (int i = 0; i < files.length; i++) {
+        if (files[i].isFile()) {
+            fileNames[i] = files[i].getName();
+        }
+    }
+
+    pageContext.setAttribute("fileNames", fileNames);
+%>
+
+
+<br/>
+<c:forEach var="fileName" items="${fileNames}">
+    <a href="${fileName}">${fileName}</a><br/>
+</c:forEach>
 
 <br/>
 <br/>

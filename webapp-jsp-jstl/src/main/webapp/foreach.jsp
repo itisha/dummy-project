@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--
   Created by IntelliJ IDEA.
   User: tkuprevich
@@ -15,5 +16,8 @@
     String[] cities = {"Minsk", "Tallin", "Helsinki"};
     pageContext.setAttribute("myCities", cities);
 %>
+<c:forEach var="city" items="${myCities}">
+    ${city} <br/>
+</c:forEach>
 </body>
 </html>

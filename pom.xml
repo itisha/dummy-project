@@ -17,6 +17,7 @@
         <module>xml-parsing</module>
         <module>io-demo</module>
         <module>webapp-jsp</module>
+        <module>webapp-jsp-jstl</module>
     </modules>
 
     <properties>
@@ -41,6 +42,7 @@
         <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
         <findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
+        <javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp-api.version>
     </properties>
 
     <dependencyManagement>
@@ -53,7 +55,7 @@
             </dependency>
 
             <dependency>
-                <groupId>javax.servlet</groupId>
+                <groupId>jstl</groupId>
                 <artifactId>jstl</artifactId>
                 <version>${jstlVersion}</version>
             </dependency>
@@ -61,6 +63,11 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${javax.servlet-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>javax.servlet.jsp-api</artifactId>
+                <version>${javax.servlet.jsp-api.version}</version>
             </dependency>
 
             <dependency>

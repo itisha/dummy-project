@@ -18,6 +18,7 @@
         <module>io-demo</module>
         <module>webapp-jsp</module>
         <module>webapp-jsp-jstl</module>
+        <module>webapp-servlet</module>
     </modules>
 
     <properties>

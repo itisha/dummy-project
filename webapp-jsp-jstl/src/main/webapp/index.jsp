@@ -1,5 +1,8 @@
 <%@ page import="java.io.File" %>
+<%@ page import="java.util.LinkedList" %>
+<%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <title>Hello JSTL world!</title>
@@ -19,10 +22,14 @@
 <%
     File directory = new File(request.getRealPath("."));
     File[] files = directory.listFiles();
-    String[] fileNames = new String[files.length];
+    List<String> fileNames = new LinkedList<>();
     for (int i = 0; i < files.length; i++) {
-        if (files[i].isFile()) {
-            fileNames[i] = files[i].getName();
+        if (files[i].isFile() && files[i].getName().length() != 0) {
+            out.println(files[i].getName() + ": " + files[i].getCanonicalPath());
+            out.println("<br/>");
+            out.println(files[i].getName() + ": " + files[i].getAbsoluteFile());
+            out.println("<br/>");
+            fileNames.add(files[i].getName());
         }
     }
 

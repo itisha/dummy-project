@@ -20,6 +20,7 @@
         <module>webapp-jsp-jstl</module>
         <module>webapp-servlet</module>
         <module>webapp-mvc-no-spring</module>
+        <module>webapp-mvc-jdbc-no-spring</module>
         <module>commons</module>
     </modules>
 

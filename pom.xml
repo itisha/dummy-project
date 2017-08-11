@@ -19,6 +19,8 @@
         <module>webapp-jsp</module>
         <module>webapp-jsp-jstl</module>
         <module>webapp-servlet</module>
+        <module>webapp-mvc-no-spring</module>
+        <module>commons</module>
     </modules>
 
     <properties>
@@ -28,7 +30,6 @@
         <springVersion>4.3.9.RELEASE</springVersion>
         <jstlVersion>1.2</jstlVersion>
         <hibernateVersion>5.2.10.Final</hibernateVersion>
-        <hibernateValidator>5.4.1.Final</hibernateValidator>
         <log4jVersion>1.2.17</log4jVersion>
         <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
         <c3p0.version>0.9.1.2</c3p0.version>

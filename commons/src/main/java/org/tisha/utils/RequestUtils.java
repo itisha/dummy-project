@@ -1,4 +1,4 @@
-package org.tisha.servlet.org.tisha.utils;
+package org.tisha.utils;
 
 import javax.servlet.ServletRegistration;
 import javax.servlet.http.HttpServletRequest;

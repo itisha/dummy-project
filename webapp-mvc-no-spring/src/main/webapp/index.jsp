@@ -5,10 +5,6 @@
 <%@ page import="java.util.Collection" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="java.util.List" %>
-<html>
-<body>
-<h2>Hello World!</h2>
-
 <%
     File directory = new File(request.getRealPath("."));
     File[] files = directory.listFiles();
@@ -24,6 +20,9 @@
     Collection<String> requestMappings = RequestUtils.getRequestMappings(request);
     pageContext.setAttribute("requestMappings", requestMappings);
 %>
+<html>
+<body>
+<h2>Hello World!</h2>
 
 
 <br/>
@@ -34,7 +33,5 @@
 <c:forEach var="mapping" items="${requestMappings}">
     <a href="${pageContext.request.contextPath.concat(mapping)}">${mapping}</a><br/>
 </c:forEach>
-
-
 </body>
 </html>

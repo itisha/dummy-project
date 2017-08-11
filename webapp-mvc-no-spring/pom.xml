@@ -7,9 +7,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>webapp-servlet</artifactId>
+    <artifactId>webapp-mvc-no-spring</artifactId>
     <packaging>war</packaging>
-    <name>webapp-servlet Maven Webapp</name>
+    <name>webapp-mvc-no-spring Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <dependencies>
@@ -36,6 +36,6 @@
     </dependencies>
 
     <build>
-        <finalName>webapp-servlet</finalName>
+        <finalName>webapp-mvc-no-spring</finalName>
     </build>
 </project>

@@ -20,6 +20,7 @@ public class MvcDemoServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //read data from db:
         String[] students = {"Susan", "Ani", "Mohamed", "Trupti"};
         request.setAttribute("students", students);
 

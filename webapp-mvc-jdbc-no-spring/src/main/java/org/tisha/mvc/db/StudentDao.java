@@ -4,6 +4,7 @@ import org.tisha.mvc.model.Student;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -65,6 +66,26 @@ public class StudentDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void addStudent(Student student) throws Exception {
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+        try {
+            connection = dataSource.getConnection();
+            String sql = "INSERT INTO customer " +
+                    "(first_name, last_name, email) " +
+                    "VALUES (?, ?, ?)";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, student.getFirstName());
+            statement.setString(2, student.getLastName());
+            statement.setString(3, student.getEmail());
+
+            statement.execute();
+        } finally {
+            close(connection, statement, null);
         }
     }
 }

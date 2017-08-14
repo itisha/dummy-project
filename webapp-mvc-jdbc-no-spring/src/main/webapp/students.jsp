@@ -22,6 +22,12 @@
     </div>
     <div id="container">
         <div id="content">
+
+            <input type="button" value="Add Student"
+                   onclick="window.location.href='add-student.jsp'; return false;"
+                   class="add-student-button"
+            />
+
             <table>
                 <tr>
                     <th>First name:</th>

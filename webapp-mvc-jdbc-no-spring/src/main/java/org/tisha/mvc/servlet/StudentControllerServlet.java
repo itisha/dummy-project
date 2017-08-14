@@ -39,14 +39,45 @@ public class StudentControllerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<Student> students = studentDao.getStudents();
-            request.setAttribute("STUDENTS", students);
+            String command = request.getParameter("command");
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/students.jsp");
-            dispatcher.forward(request, response);
+            if (command == null) {
+                listStudents(request, response);
+
+            } else {
+
+                switch (command) {
+                    case "LIST":
+                        listStudents(request, response);
+                        break;
+                    case "ADD":
+                        addStudent(request, response);
+                        break;
+                    default:
+                        listStudents(request, response);
+                }
+            }
+
         } catch (Exception e) {
             throw new ServletException(e);
         }
+    }
+
+    private void addStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String email = request.getParameter("email");
+        Student student = new Student(firstName, lastName, email);
+        studentDao.addStudent(student);
+        listStudents(request, response);
+    }
+
+    private void listStudents(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        List<Student> students = studentDao.getStudents();
+        request.setAttribute("STUDENTS", students);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/students.jsp");
+        dispatcher.forward(request, response);
     }
 
 }

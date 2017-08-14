@@ -88,4 +88,70 @@ public class StudentDao {
             close(connection, statement, null);
         }
     }
+
+    public Student getStudent(String studentId) throws Exception {
+        Student student = null;
+
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        int studentIdInt;
+
+        try {
+            studentIdInt = Integer.parseInt(studentId);
+            connection = dataSource.getConnection();
+            String sql = "SELECT * FROM customer WHERE id = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, studentId);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                student = new Student(studentIdInt,
+                        resultSet.getString("first_name"),
+                        resultSet.getString("last_name"),
+                        resultSet.getString("email"));
+            } else {
+                throw new Exception("Not found student with id = " + studentId);
+            }
+        } finally {
+            close(connection, statement, resultSet);
+        }
+
+        return student;
+    }
+
+    public void updateStudent(Student student) throws Exception {
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+        try {
+            connection = dataSource.getConnection();
+            String sql = "UPDATE customer " +
+                    "SET first_name = ?, last_name = ?, email = ? WHERE id = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, student.getFirstName());
+            statement.setString(2, student.getLastName());
+            statement.setString(3, student.getEmail());
+            statement.setInt(4, student.getId());
+
+            statement.execute();
+        } finally {
+            close(connection, statement, null);
+        }
+    }
+
+    public void deleteStudentById(int id) throws Exception {
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+        try {
+            connection = dataSource.getConnection();
+            String sql = "DELETE FROM customer WHERE id = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+
+            statement.execute();
+        } finally {
+            close(connection, statement, null);
+        }
+    }
 }

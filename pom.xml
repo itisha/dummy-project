@@ -22,6 +22,7 @@
         <module>webapp-mvc-no-spring</module>
         <module>webapp-mvc-jdbc-no-spring</module>
         <module>commons</module>
+        <module>hello-mockito</module>
     </modules>
 
     <properties>
@@ -39,7 +40,7 @@
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
         <jcl-over-slf4j.version>1.8.0-alpha2</jcl-over-slf4j.version>
         <mysql-connector-java.version>5.1.37</mysql-connector-java.version>
-        <junit.version>3.8.1</junit.version>
+        <junit.version>4.12</junit.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <maven-release-plugin.version>2.5.2</maven-release-plugin.version>
         <maven-scm-plugin.version>1.9.5</maven-scm-plugin.version>

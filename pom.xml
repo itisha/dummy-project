@@ -22,6 +22,7 @@
         <module>webapp-mvc-no-spring</module>
         <module>webapp-mvc-jdbc-no-spring</module>
         <module>commons</module>
+        <module>ethereum-vote</module>
         <module>hello-mockito</module>
     </modules>
 
@@ -49,6 +50,7 @@
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
         <findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
         <javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp-api.version>
+        <web3j.core.version>2.3.1</web3j.core.version>
     </properties>
 
     <dependencyManagement>
@@ -188,6 +190,12 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>${findbugs-maven-plugin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.web3j</groupId>
+                <artifactId>core</artifactId>
+                <version>${web3j.core.version}</version>
             </dependency>
 
         </dependencies>
